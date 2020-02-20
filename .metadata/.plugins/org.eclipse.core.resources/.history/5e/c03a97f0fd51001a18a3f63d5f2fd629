@@ -1,0 +1,22 @@
+
+public class Gumball {
+	private final double price;
+	private String color;
+	
+	public Gumball(Stinr color, double price) {
+		this.color = color;
+		this.price = price;
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	
+	public double getPrice() {
+		return price;
+	}
+	
+	public String toString() {
+        return  color + " gumball costing $" + price + " each.";
+    }
+}

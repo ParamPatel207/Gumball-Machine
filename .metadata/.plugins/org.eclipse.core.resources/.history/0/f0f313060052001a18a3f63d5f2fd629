@@ -1,0 +1,51 @@
+
+public class GumballMachine {
+
+	/**
+	 * Cost of Gumball
+	 */
+	private final static Gumball RED = new Gumball("Red", 0.05);
+	private final static Gumball YELLOW = new Gumball("Yellow", 0.10);
+	
+	public final static Coin QUARTER = new Coin(.25);
+	public final static Coin DIME = new Coin(.10);
+	public final static Coin NICKEL = new Coin(.05);
+	
+	private static double balance = 0.0;
+	
+	
+	
+	public GumballMachine() {
+		super();
+	}
+	
+	public double getBalance() {
+		return balance;
+	}
+	
+	public void insertCoin(double coin) {
+		balance = balance + coin;
+	}
+	
+	/**
+	 * Red Lever
+	 */
+	public void crankRed() {
+		
+	}
+	
+	/**
+	 * Yellow Lever
+	 */
+	public void crankYellow() {
+		
+	}
+	
+	/**
+	 * Returns change
+	 */
+	public void returnChange() {
+		
+	}
+	
+}

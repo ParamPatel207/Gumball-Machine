@@ -1,0 +1,73 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class GumballMachine {
+	private static DecimalFormat df = new DecimalFormat("0.00");
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		double balance = 0.0;
+		int redGumball = 0;
+		int yellowGumball = 0;
+		System.out.println("Please insert coin(s) .05, .10, .25.");
+		System.out.println("Enter any negative number in order to proceed to the menu:");
+		while(scan.hasNextDouble()) {
+			double coin = scan.nextDouble();
+			//Enter negative to exit loop
+			if(coin <= 0) {
+				break;
+			}
+			//Checks to see if coin is valid
+			if(coin == .05 || coin == .10 || coin == .25) {
+				 balance += coin;
+				 System.out.println("Total Balance: " + df.format(balance));
+			}
+			else {
+				System.out.println("Please enter a valid coin!");
+			}
+		}
+		
+		
+		System.out.println("Red Gumball: 0.05, Yellow Gumball: 0.10");
+		System.out.println("Enter 'exit' to leave the menu'");
+		System.out.println("Please enter what color gumball you would like to purchase: ");
+		while(scan.hasNext()) {
+			String color = scan.next().toLowerCase();
+			
+			if(color.equals("exit")) {
+				break;
+			}
+			//Red gumball
+			if(color.equals("red")) {
+				if(balance <= 0) {
+					System.out.println("Insufficient funds.");
+				}
+				else {
+					redGumball++;
+					balance = balance - 0.05;
+					System.out.println("Total Balance: " + df.format(balance));
+				}
+				
+			}
+			else if(color.equals("yellow")) {
+				
+				if(balance <= 0) {
+					System.out.println("Insufficient funds.");
+				}
+				else {
+					yellowGumball++;
+					balance = balance - 0.10;
+					System.out.println("Total Balance: " + df.format(balance));
+				}
+				
+			}
+			else {
+				System.out.println("Please enter a valid color!");
+			}
+		}
+		
+		
+		
+		
+	}
+}

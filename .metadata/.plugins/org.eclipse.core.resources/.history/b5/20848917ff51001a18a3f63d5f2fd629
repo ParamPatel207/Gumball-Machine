@@ -1,0 +1,14 @@
+
+public class Coin {
+	private int value;
+	
+	private Coin(double value) {
+		this.value = value;
+	}
+	
+	public int getValue() {
+		return value;
+	}
+	
+	
+}

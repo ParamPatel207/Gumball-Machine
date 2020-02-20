@@ -1,0 +1,9 @@
+
+public class Gumball {
+
+	private final static int QUARTER = 25;
+	private final static int NICKEL = 5;
+	private final static int DIME = 10;
+	
+	
+}

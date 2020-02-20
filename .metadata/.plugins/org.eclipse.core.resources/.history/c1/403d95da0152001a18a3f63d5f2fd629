@@ -1,0 +1,13 @@
+
+public class GumballMachineTester {
+
+	public static void main(String[] args) {
+		GumballMachine GumballMachine = new GumballMachine();
+		
+		GumballMachine.insertCoin(.25);
+		GumballMachine.insertCoin(.01);
+		System.out.println(GumballMachine.getBalance());
+		
+		
+	}
+}

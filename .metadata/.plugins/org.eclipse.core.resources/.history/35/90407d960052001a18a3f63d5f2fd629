@@ -1,0 +1,18 @@
+
+public class GumballMachineTester {
+	
+	private final static double QUARTER = .25;
+	private final static double DIME = .10;
+	private final static double NICKEL = .05;
+
+	public static void main(String[] args) {
+		GumballMachine GumballMachine = new GumballMachine();
+		
+		GumballMachine.insertCoin(QUARTER);
+		GumballMachine.insertCoin(NICKEL);
+		GumballMachine.insertCoin(DIME);
+		System.out.println(GumballMachine.getBalance());
+		
+		
+	}
+}

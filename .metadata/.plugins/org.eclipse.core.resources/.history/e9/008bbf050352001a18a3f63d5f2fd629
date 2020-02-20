@@ -1,0 +1,78 @@
+
+public class GumballMachine {
+
+	/**
+	 * Cost of Gumball
+	 */
+	private final static Gumball RED = new Gumball("Red", 0.05);
+	private final static Gumball YELLOW = new Gumball("Yellow", 0.10);
+	
+	private final static double QUARTER = .25;
+	private final static double DIME = .10;
+	private final static double NICKEL = .05;
+	
+	
+	private double balance = 0.0;
+	private int numberOfRed;
+	private int numberOfYellow;
+	
+	
+	
+	public GumballMachine() {
+		super();
+	}
+	
+	public double getBalance() {
+		return balance;
+	}
+	
+	public String insertCoin(double coin) {
+		String msg;
+		if(coin == QUARTER || coin == DIME || coin == NICKEL) {
+			balance = balance + coin;
+			msg = "Coin is valid";
+		}
+		else {
+			msg = "Coin is not valid and has been returned, please insert a valid coin";
+		}
+		return msg;
+	}
+	
+	public String returnChange() {
+		String msg = "Your change is being dispensed.";
+		balance = 0;
+		return msg;
+		
+	}
+	
+	/**
+	 * Red Lever
+	 * Red gumball is .05
+	 */
+	public String crankRed() {
+		String msg;
+		if(balance > .05) {
+			balance = balance - .05;
+			msg = "1 Red gumball is dispensed. Your balance is " + balance;
+		}
+		else {
+			msg = "Insufficient funds";
+		}
+		return msg;
+	}
+	
+	/**
+	 * Yellow Lever
+	 */
+	public void crankYellow() {
+		
+	}
+	
+	/**
+	 * Returns change
+	 */
+	public void returnChange() {
+		
+	}
+	
+}

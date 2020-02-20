@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class GumballMachine {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		double balance = 0.0;
+		System.out.println("Please insert coin(s) .05, .10, .25:");
+		while(scan.hasNextDouble()) {
+			double coin = scan.nextDouble();
+			//Enter negative to exit loop
+			if(coin <= 0) {
+				break;
+			}
+			//Checks to see if coin is valid
+			if(coin == .05 || coin == .10 || coin == .25) {
+				 balance += coin;
+			}
+			else {
+				System.out.println("Please enter a valid coin!");
+			}
+		}
+		
+	}
+}
