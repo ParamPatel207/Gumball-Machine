@@ -2,9 +2,9 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 
 public class GumballMachine {
-	private static DecimalFormat df = new DecimalFormat("0.00");
+	private static DecimalFormat df = new DecimalFormat("#.##");
 	private final double redGumBall = 0.05;
-	private final double yellowGumBall = 0.1;
+	private final double yellowGumBall = 0.10;
 	private double totalCost = 0.0;
 	
 	private void sop(String stmt)
@@ -44,26 +44,30 @@ public class GumballMachine {
 		{
 			double cost = totalCost;
 			totalCost = 0;
-			return cost;
+			String num = df.format(cost);
+			return Double.parseDouble(num);
 		}
 		else
 		{
-			return -1;
+			totalCost = totalCost - totalCost;
+			return 0;
 		}
 	}
 	boolean insertCoin(double coin) 
 	{
-		if(coin == 0.05 ||coin == 0.1||coin == 0.25)
+		if(coin == 0.05 ||coin == 0.10||coin == 0.25)
 		{
 			totalCost = totalCost + coin;
 			sop("total amount in machine is " + totalCost);
 			return true;
 		}
 		else {
+		// returning all coins
 		totalCost = totalCost + coin;
 		double total = returnChange();
 		sop("money returned please insert valid coins 0.05,0.1,0.25 \n total amount returned = "+ total);
 		return false;
+		
 		}
 	}
 	public static void main(String[] args) {
